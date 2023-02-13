@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d082a35d05bab1746bed30387b2bfea5, type: 3}
+  m_Name: QuestionOne
+  m_EditorClassIdentifier: 
+  description: The press are demanding an answer on what is happening but you currently
+    have little to no information
+  question: What do you do?
+  choiceOne: Tell them you have no information yet
+  choiceOneConsequence: The people are unhappy there are no answers... but there
+    seems to be no immdiate consequences.
+  choiceOneModifiers:
+  - 0
+  - 0
+  - 0
+  - 0
+  choiceTwo: Tell them the little and unreliable information you currently have
+  choiceTwoConsequence: 'The people accept this answer and are following your information
+    but more are becoming infected.
+
+    +50,000 Infected'
+  choiceTwoModifiers:
+  - 0
+  - 0
+  - +
+  - 50000
+  choiceThree: Lie and reassure them everything will be ok
+  choiceThreeConsequence: 'The public is now happy and believe they have no reason
+    to worry.
+
+    +100,000 Infected'
+  choiceThreeModifiers:
+  - 0
+  - 0
+  - +
+  - 100000
+  choiceFour: No comment at this time
+  choiceFourConsequence: 'The public is upset that there are no responses from their
+    goverment officals. You better come up with a reply soon before there is unrest
+    amongst the citizens.
+
+    -$10M
+
+    +100,000 Infected'
+  choiceFourModifiers:
+  - '-'
+  - 10000000
+  - +
+  - 100000
+  nextChoiceOne: {fileID: 11400000, guid: 0d784a26f78f56c4f86df5dac23fe279, type: 2}
+  nextChoiceTwo: {fileID: 11400000, guid: fa337e727bfe8fc47a4bfab6100786e9, type: 2}
+  nextChoiceThree: {fileID: 11400000, guid: fa337e727bfe8fc47a4bfab6100786e9, type: 2}
+  nextChoiceFour: {fileID: 11400000, guid: 0d784a26f78f56c4f86df5dac23fe279, type: 2}
+  image: {fileID: 21300000, guid: 04ab42197a4df54498b9825ff7afb1da, type: 3}

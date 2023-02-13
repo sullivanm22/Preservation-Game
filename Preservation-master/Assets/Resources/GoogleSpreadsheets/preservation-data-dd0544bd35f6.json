@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "preservation-data",
+  "private_key_id": "dd0544bd35f62d135c423ae50a5415c8264e0df0",
+  "private_key": "-----BEGIN PRIVATE KEY-----MIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCRvGMMSw2zEt8RvhC+6GRDkMMCVWZiQaWriYwZK9eCvsusr5RGzRocQ3NZ350ZL5pThWZGND18mWjOf8+Ue0veew5f6uOyWpGJZ6yWyysHECTSibKojswWuCO4DolWRC3Y/hRwU6Ou/MdaTeKlzz80iXgPrug+mCn4kt9oacY7sDTzKWlymYflQAZwlwcc3ilNzF54X9E9PCsVYpGYScPQ54gryGf44JONUTvPYzWxrYGWeFBc4AlijiOj/T7s892daHf4cp75E3LjwpU4Iewv6LsYGTpG/UhnXvFiTXsHl5HIQ/TdFQIaj6OkUE/HPl9DS8/onftLhreh5TSYw23hAgMBAAECgf9L4RUxMWLQpOLAZNW95gH5AUaH0ISeZCUo9f+b8NfPm3KGAbqSTU1q/zOazR20H1+bB7oDPkVFZXAhvypgL6eGZKFMumATslRUgUZmEnffauhr4TDEfT/bacTZ8GJRfZjhgmk3PaqGpyv6ONM+wcmG8Tcx8z+5AkEtdktxcfa6McY6rplRJjgYKsAHp5MaqpZQ1XAwvRWh6Ahmd7nFWcKhMVOjKlo7VpupwWE/y4zW4P97LtL6pNH9WPb6Hgxsi5ZqJUewe4Z1ppvyrfvtkX0mtzumJa68k51mtFMpGmP046KpB00ES9f63G+pNvYT+QhzbGN2PRGNl7CJm84h9gECgYEAwr8WPTPMPwMruHs1T4eo38V0VE8YpIJ6uIBy8S56aFWgh6pgWTeuw21bElyw9AEv0O5rvoYxv5412sUGcWUPNshvkPwiDXTbRpsVPpkQxSGBP45aTh5q/pRkYOC+vs6ub5yjW/NnKvmRvWAvwjPCF3Ef7VVjsym4mET/QsiyfoECgYEAv5L9BBMcmaP1ZLUlBHhWIVB6cVjfkxbNS0K/2ZK3XrhtQfjmHdYx4WhTjG4eb4aIuc7VfHsdG6gDi7Vu84sS9sYes0lGUCrQP57KHig1kESCHPfZp3rmR6BFHSEbFMZ/e90MTj4UOGOUWPrGSkXoa9GdbcyFht8nrzz0pq+f/2ECgYB9if8FDwoAKMQbVVllXjcvoTK/Uom5Kt9/ZlYyQVrpPSGRsvQPL0T6d9k4egYcFVPEpJ1SIWGae5uN3mqr2JC5KPY6iT5OXGEqH7jPNI7J9TJDTTnLl/IzEGewx9BOYh+ylU/9a2e7HUykvoeq8gCRafxB20S87w0vI3NFkuj1gQKBgQCIclLPkiUusP7ZCcQh2OvPsphjHt+uzfDOh+5JMxxz1HvNH1AXNDY2y62mOdBnsrSzUsPvc2iaCCLuYP1zbTzGkvnOzIPOGZBVn+1paU4tQP5DT6ywgvJ9VYOkaa32MCMgv6JCICkauKIydfrBb+VI1fWA/Mil9U84mvvNtQ0KQQKBgBsgDxIKuKawBpSVRJex47Z0KOslFJLQT1NFfAC92/jYdchcptG9mVAIbudteU10UkUd9tCmIjSEKovace8OPfR9AHrF+SuPKxiLRT3XSdhNGw7WhAFOxCmzT8dZG5TIL34ucSUPLy4+0DRF+Jy5GJiZzs7j1rFeM0MLeriuBxMd-----END PRIVATE KEY-----\n",
+  "client_email": "unity-data-737@preservation-data.iam.gserviceaccount.com",
+  "client_id": "116044131277714451219",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/unity-data-737%40preservation-data.iam.gserviceaccount.com"
+}

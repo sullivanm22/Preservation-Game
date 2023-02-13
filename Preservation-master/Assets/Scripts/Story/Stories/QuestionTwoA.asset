@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d082a35d05bab1746bed30387b2bfea5, type: 3}
+  m_Name: QuestionTwoA
+  m_EditorClassIdentifier: 
+  description: New information is finally in! The CDC is recommending the use of
+    masks and washing your hands greatly decreases the spread of COVID.
+  question: What do you do?
+  choiceOne: Tell the public this new information
+  choiceOneConsequence: 'The people are happy to hear more news on how they can protect
+    themselves. '
+  choiceOneModifiers:
+  - 0
+  - 0
+  - 0
+  - 0
+  choiceTwo: 'Have health officals tell the public this information '
+  choiceTwoConsequence: 'The people are happy to hear more news and seem to fully
+    understand how they can protect themselves and their families from COVID.
+
+    -10,000
+    Infected'
+  choiceTwoModifiers:
+  - 0
+  - 0
+  - '-'
+  - 10000
+  choiceThree: Sponser programming having health officals relay this information
+    every hour. -$50M
+  choiceThreeConsequence: "The programs are having a great response and is reaching
+    every household in the country. People are greatly understanding how to protect
+    themselves from the virus. \n-$50M\n-10,000 Infected"
+  choiceThreeModifiers:
+  - '-'
+  - 50000000
+  - '-'
+  - 10000
+  choiceFour: Stay silent on this matter
+  choiceFourConsequence: "The people are upset there have been no updates on the
+    virus and are getting their information from different sources, sometimes unreliable
+    ones. \n+50,000 Infected"
+  choiceFourModifiers:
+  - 0
+  - 0
+  - +
+  - 50000
+  nextChoiceOne: {fileID: 11400000, guid: 27e22218d1bc6d44c95105d3df4fc03a, type: 2}
+  nextChoiceTwo: {fileID: 11400000, guid: 27e22218d1bc6d44c95105d3df4fc03a, type: 2}
+  nextChoiceThree: {fileID: 11400000, guid: 27e22218d1bc6d44c95105d3df4fc03a, type: 2}
+  nextChoiceFour: {fileID: 11400000, guid: 27e22218d1bc6d44c95105d3df4fc03a, type: 2}
+  image: {fileID: 21300000, guid: b10c946f96ab34641a9f8ce39ab06fc9, type: 3}

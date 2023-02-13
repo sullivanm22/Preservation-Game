@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d082a35d05bab1746bed30387b2bfea5, type: 3}
+  m_Name: QuestionThree
+  m_EditorClassIdentifier: 
+  description: You are invited to one of the biggest events of the year, attending
+    this event will raise your popularity significantly.
+  question: What do you do?
+  choiceOne: Attend event with a mask
+  choiceOneConsequence: "Your fans are ecstatic that you attended the event. This
+    helps your popularity and greatly increases your paycheck. \n+$5M"
+  choiceOneModifiers:
+  - +
+  - 5000000
+  - 0
+  - 0
+  choiceTwo: Attend event without a mask
+  choiceTwoConsequence: "Your fans are ecstatic that you attended the event. This
+    helps your popularity and greatly increases your paycheck. Not wearing a mask
+    influnces others to not wear one, this has made others not wear once and COVID
+    cases going up. \n+$5M\n+10,000 Infected"
+  choiceTwoModifiers:
+  - +
+  - 5000000
+  - +
+  - 10000
+  choiceThree: Hold a meet and greet
+  choiceThreeConsequence: "Your fans are ecstatic that they got to meet you at the
+    event. This helps your popularity and greatly increases your paycheck. \n+$5M"
+  choiceThreeModifiers:
+  - +
+  - 5000000
+  - 0
+  - 0
+  choiceFour: Do not attend the event
+  choiceFourConsequence: "Your fans are disapointed that you didn't make an appearance
+    at the event. Most people understand because of the circumstances but this has
+    damadged your popularity. \n-$1M "
+  choiceFourModifiers:
+  - '-'
+  - 1000000
+  - 0
+  - 0
+  nextChoiceOne: {fileID: 11400000, guid: 53073b6109ba1d04fa0079882ed59810, type: 2}
+  nextChoiceTwo: {fileID: 11400000, guid: 53073b6109ba1d04fa0079882ed59810, type: 2}
+  nextChoiceThree: {fileID: 11400000, guid: 53073b6109ba1d04fa0079882ed59810, type: 2}
+  nextChoiceFour: {fileID: 11400000, guid: b9d22540e62cb9448ab1192cf81f0150, type: 2}
+  image: {fileID: 21300000, guid: 100322aef602ce140b4c32b3e12f92d8, type: 3}

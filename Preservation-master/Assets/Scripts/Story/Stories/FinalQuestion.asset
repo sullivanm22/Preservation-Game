@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d082a35d05bab1746bed30387b2bfea5, type: 3}
+  m_Name: FinalQuestion
+  m_EditorClassIdentifier: 
+  description: 'The world has been struggling with supply shortages due to the coronavirus. 
+    You have been given a small donation to put towards this problem. '
+  question: What will you put the money towards?
+  choiceOne: Masks
+  choiceOneConsequence: "The donation worked and more masks are being distrbuted
+    into communties. This is helping with stopping the spread of infection. \n-1,000
+    Infected"
+  choiceOneModifiers:
+  - 0
+  - 0
+  - '-'
+  - 1000
+  choiceTwo: Sanitising Products
+  choiceTwoConsequence: 'The donation worked! More hand sanitizer and cleaning products
+    are being distrbuted into communties. This is helping with stopping the spread
+    of infection.
+
+    -1,000 Infected'
+  choiceTwoModifiers:
+  - 0
+  - 0
+  - '-'
+  - 1000
+  choiceThree: Toilet Paper
+  choiceThreeConsequence: 'This donation helps gets more toliet paper on the sheleves.
+    But this doesn''t really seem to help much. '
+  choiceThreeModifiers:
+  - 0
+  - 0
+  - 0
+  - 0
+  choiceFour: Covid Tests
+  choiceFourConsequence: 'The donation worked and more Covid Tests are being distrbuted
+    into communties. This helps detect who has COVID to help with stopping the spread
+    of infection.
+
+    -1,000 Infected'
+  choiceFourModifiers:
+  - 0
+  - 0
+  - '-'
+  - 1000
+  nextChoiceOne: {fileID: 11400000}
+  nextChoiceTwo: {fileID: 11400000}
+  nextChoiceThree: {fileID: 11400000}
+  nextChoiceFour: {fileID: 11400000}
+  image: {fileID: 21300000, guid: e6f0d7ccb53ddb7489cd379116e83a9e, type: 3}

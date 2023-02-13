@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Launch.unity
+    guid: 0c023ede8d3e4594b9205f49be714431
+  - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: e2fee853a234e73448db503dee6437c3
+  - enabled: 1
+    path: Assets/Scenes/Main Game.unity
+    guid: 036fcfc7700582741b10bcd65d93c617
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 43618c54e32253746bb27a74fc81a945
+  - enabled: 1
+    path: Assets/Scenes/Survey/Survey1.unity
+    guid: 163cf826a15d2d24591174b94fbde44e
+  - enabled: 1
+    path: Assets/Scenes/Survey/Survey2.unity
+    guid: 266bef3e021354947bdce492e0fc4460
+  - enabled: 1
+    path: Assets/Scenes/Survey/Survey3.unity
+    guid: abb45e27853340c429f9d2813b87af02
+  - enabled: 1
+    path: Assets/Scenes/Survey/Survey4.unity
+    guid: a78da0492ca780345b8ed9b43bba7090
+  - enabled: 1
+    path: Assets/Scenes/Survey/Survey5.unity
+    guid: 10d2f15aff8b4b54bb012bef67a3115e
+  - enabled: 1
+    path: Assets/Scenes/Survey/Pre-Survey1.unity
+    guid: 59348f3517b204f42a8943aa0ea7a10d
+  - enabled: 1
+    path: Assets/Scenes/Survey/Pre-Survey2.unity
+    guid: b408d0a22aa6fa148a398d32eee5b7f8
+  - enabled: 1
+    path: Assets/Scenes/Survey/Pre-Survey3.unity
+    guid: 31cf6caf0338b2740bbb943daeea88db
+  m_configObjects: {}
