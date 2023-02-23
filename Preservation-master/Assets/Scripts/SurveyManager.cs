@@ -39,7 +39,6 @@ public class SurveyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         Debug.Log(SavedInfo.userRow);
     }
     //All these are for changing the scenes between the survey scenes

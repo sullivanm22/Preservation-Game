@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     private float delayTime;
     public float defaultDelayTime;
     private float nextActionTime = 0;
-    private bool paused = false;
+    public bool paused = false;
     private bool storyRun = false;
     private int nextEventNum = -4;
     private bool gameLost = false;

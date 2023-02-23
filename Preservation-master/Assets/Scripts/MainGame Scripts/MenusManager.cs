@@ -41,6 +41,7 @@ public class MenusManager : MonoBehaviour
         mainGame.SetActive(true);
         policyMenu.SetActive(false);
         pauseMenu.SetActive(false);
+        GameManager.setPause(false);
     }
 
     public void toMainMenu() {
