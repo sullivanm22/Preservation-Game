@@ -10,20 +10,22 @@ using UnityEngine;
 public class RandomEvents : MonoBehaviour
 {
 
+    public static RandomEvents instance;
+
     public static EventManager em = new EventManager();
 
     private List<int> eventIndex = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7 };
 
 
 
-    public (int, int) eventModifier()  //(infected, deaths) modifers
+    public static (int, int) eventModifier()  //(infected, deaths) modifers
     {
         //Makes sure we are not in tutorial mode and that the game day is over 7.
         if (!DescriptionWindow.tutorialMode() && GameManager.getDay() > 7)
         {
 
 
-            Shuffle(eventIndex);
+            Shuffle(instance.eventIndex);
 
             //Random numbers generated for a random amount of infected 
             int smallRandomNumber = Random.Range(1, 10);
@@ -34,10 +36,10 @@ public class RandomEvents : MonoBehaviour
             //When an event is chosen, it passes through here where it pauses the game and then the effects will take place as well as the description details. 
             for (int i = 0; i < 8; i++)
             {
-                switch (eventIndex[i])
+                switch (instance.eventIndex[i])
                 {
                     case 0:
-                        if (fullHospital()) //Death Event
+                        if (instance.fullHospital()) //Death Event
                         {
                             Debug.Log("Full Hospital Event ");
                             GameManager.setPause(true);
@@ -48,7 +50,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 1:
-                        if (moreVentilators()) //Death Event
+                        if (instance.moreVentilators()) //Death Event
                         {
                             Debug.Log("More Ventilators Event ");
                             GameManager.setPause(true);
@@ -60,7 +62,7 @@ public class RandomEvents : MonoBehaviour
 
                         //The rest of the events only effect Infection
                     case 2:
-                        if (smallInfectedGathering())
+                        if (instance.smallInfectedGathering())
                         {
                             Debug.Log("Small Infected Gathering Event ");
                             GameManager.setPause(true);
@@ -71,7 +73,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 3:
-                        if (mediumInfectedGathering())
+                        if (instance.mediumInfectedGathering())
                         {
                             Debug.Log("Medium Infected Gathering Event ");
                             GameManager.setPause(true);
@@ -82,7 +84,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 4:
-                        if (largeInfectedGathering())
+                        if (instance.largeInfectedGathering())
                         {
                             Debug.Log("Large Infected Gathering Event");
                             GameManager.setPause(true);
@@ -93,7 +95,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 5:
-                        if (allPSA())
+                        if (instance.allPSA())
                         {
                             Debug.Log("All PSA Event ");
                             GameManager.setPause(true);
@@ -104,7 +106,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 6:
-                        if (infectedTravler())
+                        if (instance.infectedTravler())
                         {
                             Debug.Log("Infected Travler Event");
                             GameManager.setPause(true);
@@ -115,7 +117,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 7:
-                        if (infectedQuarantine())
+                        if (instance.infectedQuarantine())
                         {
                             Debug.Log("Infected Quarentine Event ");
                             GameManager.setPause(true);

@@ -652,7 +652,7 @@ PlayerSettings:
     Build: 0
     Collab: 0
     Game Performance: 0
-    Legacy Analytics: 1
+    Legacy Analytics: 0
     Purchasing: 0
     UDP: 0
     UNet: 1
@@ -670,11 +670,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 389cfa47-6d93-43e3-b9dc-5c06447137bd
+  cloudProjectId: f987e309-de4e-440e-80b2-bff6b6ed3226
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: COVID Project
-  organizationId: projects-wit
+  projectName: Preservation
+  organizationId: sullivanm22
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

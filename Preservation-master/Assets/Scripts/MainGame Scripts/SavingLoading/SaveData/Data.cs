@@ -68,15 +68,14 @@ public class Data
 
     //Default resetter for the game.
     public void reset() {
-        this.money[0] = 100000000;
-        this.money[1] = 0;
-        this.happiness = 100;
-        this.PP = 1;
-        this.healthy = 684379;
+        this.money = DifficultyMenu.getMoneyInfo();
+        this.happiness = DifficultyMenu.getHappyInfo();
+        this.PP = DifficultyMenu.getPPInfo();
+        this.healthy = DifficultyMenu.getHealthyInfo();
         this.infected = 0;
         this.deaths = 0;
         this.day = 0;
-        this.dDay = 7;
+        this.dDay = DifficultyMenu.getDDayInfo();
         initTrees();
     }
 

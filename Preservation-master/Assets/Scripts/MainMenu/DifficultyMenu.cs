@@ -180,9 +180,9 @@ public class DifficultyMenu : MonoBehaviour
         }
     }
 
-    private int[] getMoneyInfo()
+    public static int[] getMoneyInfo()
     {
-        int moneyIndex = money.value;
+        int moneyIndex = instance.money.value;
         string moneyString = "";
         switch (moneyIndex)
         {
@@ -196,20 +196,20 @@ public class DifficultyMenu : MonoBehaviour
                 moneyString = "100000000";// 100M
                 break;
             case 3:
-                moneyString = "1000000000";// 1B
+                moneyString = "250000000";// 250M
                 break;
             case 4:
-                moneyString = "10000000000";// 10B
+                moneyString = "500000000";// 500M
                 break;
             case 5:
-                moneyString = "100000000000";// 100B
+                moneyString = "1000000000";// 1B
                 break;
         }
         return Formatter.stringToValue(moneyString);
     }
-    private int getHappyInfo()
+    public static int getHappyInfo()
     {
-        int happyIndex = happy.value;
+        int happyIndex = instance.happy.value;
         int happyPercent = 0;
         switch (happyIndex)
         {
@@ -228,9 +228,9 @@ public class DifficultyMenu : MonoBehaviour
         }
         return happyPercent;
     }
-    private int getPPInfo()
+    public static int getPPInfo()
     {
-        int ppIndex = policyPoints.value;
+        int ppIndex = instance.policyPoints.value;
         int pp = 0;
         switch (ppIndex)
         {
@@ -252,42 +252,33 @@ public class DifficultyMenu : MonoBehaviour
         }
         return pp;
     }
-    private int getHealthyInfo()
+    public static int getHealthyInfo()
     {
-        int healthyIndex = healthy.value;
+        int healthyIndex = instance.healthy.value;
         int healthyVal = 0;
         switch (healthyIndex)
         {
             case 0:
-                healthyVal = 30000;
-                break;
-            case 1:
-                healthyVal = 60000;
-                break;
-            case 2:
-                healthyVal = 90000;
-                break;
-            case 3:
-                healthyVal = 120000;
-                break;
-            case 4:
-                healthyVal = 240000;
-                break;
-            case 5:
                 healthyVal = 300000;
                 break;
-            case 6:
-                healthyVal = 500000;
+            case 1:
+                healthyVal = 600000;
                 break;
-            case 7:
+            case 2:
+                healthyVal = 800000;
+                break;
+            case 3:
                 healthyVal = 1000000;
+                break;
+            case 4:
+                healthyVal = 1500000;
                 break;
         }
         return healthyVal;
     }
-    private int getDDayInfo()
+    public static int getDDayInfo()
     {
-        int dDayIndex = dDay.value;
+        int dDayIndex = instance.dDay.value;
         int dDayVal = 0;
         switch (dDayIndex)
         {

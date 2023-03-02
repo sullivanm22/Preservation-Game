@@ -13,10 +13,9 @@ public class Formulas
     public static int CalculateNewInfected(Data data)
     {
         //Random event object tracker that tracks the random events and what their modifers are
-         RandomEvents eventTracker = new RandomEvents();
 
         //Finds the modifers
-        (int, int) modifers = eventTracker.eventModifier();
+        (int, int) modifers = RandomEvents.eventModifier();
 
 
         if (data.infected == 0) {
