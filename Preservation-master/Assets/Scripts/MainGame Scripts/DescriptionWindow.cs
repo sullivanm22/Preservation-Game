@@ -83,7 +83,7 @@ public class DescriptionWindow : MonoBehaviour
         buyButton.gameObject.SetActive(true);
         buyButton.interactable = true;
         tutorialButton.gameObject.SetActive(false);
-        quitGame.gameObject.SetActive(false);
+        quitGame.gameObject.SetActive(true);
         tutorialButton.interactable = false;
         mustConfirm = false;
 

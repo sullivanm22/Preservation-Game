@@ -237,7 +237,10 @@ public class GameManager : MonoBehaviour
         {
             showPolicies();
         }
-
+        else if(Input.GetKeyDown(KeyCode.P) && paused)
+        {
+            returnToGame();
+        }
         //Only updates game time if game isn't paused.
         if (!paused) {
             nextActionTime += 1;
