@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private int nextEventNum = -4;
     private bool gameLost = false;
     private int policyVariable = 0;
-
+    private int initialPop;
     //Allow for custom start.
     public static bool customReset;
     public string defaultMoney;
@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour
 
 
     //Opens vaccine tree data, checks if certain policy is bought before showing vaccine progress bar(intended as win condition)
+    //Changed to always show vaccine slider to help players understand the goal
     public bool checkForVaccinePolicy()
     {
         Debug.Log("Checking for vaccine policy");
@@ -184,6 +185,7 @@ public class GameManager : MonoBehaviour
         SaveManager.load_Static(PlayerPrefs.GetString("Save"));
         nextActionTime = 0;
         delayTime = defaultDelayTime;
+        initialPop = currData.healthy;
         calculateDelayFrames();
         updateAllText();
         Drive.SetCellValue("Unity Data", "I", SavedInfo.userRow.ToString(), DateTime.Now.ToString());
@@ -259,7 +261,7 @@ public class GameManager : MonoBehaviour
             storyRun = false;
 }
 
-        if(currData.healthy == 0 && currData.infected == 0)
+        if(currData.healthy <= 0 && currData.infected == 0)
         {
             setPause(true);
             DescriptionWindow.loseScreen_static();
@@ -356,7 +358,8 @@ public class GameManager : MonoBehaviour
         }
 
         int nInfected = Formulas.CalculateNewInfected(currData);
-        
+        Debug.Log("New number of infected" + nInfected);
+
 
         //Infected population
         if(currData.infected + nInfected >= currData.healthy) // here it possibly goes overboard, so this smooth's out the numbers (really only used to make the infected population make sense at a losing screen)
@@ -451,6 +454,13 @@ public class GameManager : MonoBehaviour
 
     //Calculates the happiness of your population for the next day.
     private void calculateHappiness() {
+        //if num infected is greater than 25% of pop -1 from happiness
+        if(currData.infected>0){
+            if(initialPop/currData.infected<=4){
+                currData.happiness -=1;
+            }
+        }        
+        updateAllText();
 
     }
 

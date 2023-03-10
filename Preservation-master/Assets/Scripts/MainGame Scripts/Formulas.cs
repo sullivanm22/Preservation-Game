@@ -7,20 +7,16 @@ using UnityEngine;
 
 public class Formulas
 {
-
     static Queue DeathQueue = new Queue();
     //Calculates the next days newly infected and newly dead population.
     public static int CalculateNewInfected(Data data)
     {
         //Random event object tracker that tracks the random events and what their modifers are
-
+        RandomEvents eventTracker = new RandomEvents();
         //Finds the modifers
-        (int, int) modifers = RandomEvents.eventModifier();
+        (int, int) modifers = eventTracker.eventModifier();
 
 
-        if (data.infected == 0) {
-            return 0;
-        }
         int daysInfected = data.day - data.dDay;
 
         (double E, double P) = getEandP(); // E & P stop out at 0.
@@ -56,7 +52,6 @@ public class Formulas
             nInfected = data.healthy;
         }
         
-
         return nInfected;
 
 
@@ -74,7 +69,7 @@ public class Formulas
 
     public static (int, int) CalculateNewDeaths(int nInfected, Data data)   // Here, we don't modify currData at all. Say if 70 people get infected, 3 days later we calculate how many of them die and how many recover. 
     {                                                                       // Easy subtraction with return variables is done in game manager.
-        double deathRate = .003;                                            // The return variables : recover adds to healthy. Those who die add to deaths                
+        double deathRate = .005;                                            // The return variables : recover adds to healthy. Those who die add to deaths                
         int recovered = 0;                                                  // Side note, currData.infected is not prior to this method, only after. 
         int died = 0;
 
@@ -89,15 +84,15 @@ public class Formulas
         {
             Debug.Log("Ran queue");
             beenSick = (int) DeathQueue.Dequeue();
-            recovered = beenSick - (Random.Range(0, (int)(beenSick * deathRate))); //with deathrate being a bit more volitile this will simulate it well working on getting a new equation 
+            recovered = beenSick - (Random.Range(5, (int)(beenSick * deathRate))); //with deathrate being a bit more volitile this will simulate it well working on getting a new equation 
             died = beenSick - recovered;
         }
 
         else if(DeathQueue.Count < 3 && data.infected > 0 && data.day - data.dDay > 3)      //Prevent us from being stuck at 0 nInfected. Never runs really unless they are doing a great job
         {
-            Debug.Log("Ran data.infected");
-            recovered = data.infected - (Random.Range(0, (int)(data.infected * deathRate))); // Some extra die, but recovered stays the same. 
-            died = data.infected - recovered;
+            recovered = data.infected - (Random.Range(data.infected - (int)(data.infected * deathRate), data.infected)); // Some extra die, but recovered stays the same. 
+            died = (int)(data.infected * deathRate) - recovered;
+            Debug.Log("Ran data.infected recovered =" +recovered);
         }
 
         if(DeathQueue.Count > 14)               //Happens when recovered is added back to the queue 11 times 

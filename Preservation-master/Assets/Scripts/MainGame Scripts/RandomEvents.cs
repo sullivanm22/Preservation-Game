@@ -10,7 +10,7 @@ using UnityEngine;
 public class RandomEvents : MonoBehaviour
 {
 
-    public static RandomEvents instance;
+    public RandomEvents instance;
 
     public static EventManager em = new EventManager();
 
@@ -18,14 +18,14 @@ public class RandomEvents : MonoBehaviour
 
 
 
-    public static (int, int) eventModifier()  //(infected, deaths) modifers
+    public (int, int) eventModifier()  //(infected, deaths) modifers
     {
         //Makes sure we are not in tutorial mode and that the game day is over 7.
         if (!DescriptionWindow.tutorialMode() && GameManager.getDay() > 7)
         {
 
 
-            Shuffle(instance.eventIndex);
+            Shuffle(eventIndex);
 
             //Random numbers generated for a random amount of infected 
             int smallRandomNumber = Random.Range(1, 10);
@@ -36,10 +36,10 @@ public class RandomEvents : MonoBehaviour
             //When an event is chosen, it passes through here where it pauses the game and then the effects will take place as well as the description details. 
             for (int i = 0; i < 8; i++)
             {
-                switch (instance.eventIndex[i])
+                switch (eventIndex[i])
                 {
                     case 0:
-                        if (instance.fullHospital()) //Death Event
+                        if (fullHospital()) //Death Event
                         {
                             Debug.Log("Full Hospital Event ");
                             GameManager.setPause(true);
@@ -50,7 +50,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 1:
-                        if (instance.moreVentilators()) //Death Event
+                        if (moreVentilators()) //Death Event
                         {
                             Debug.Log("More Ventilators Event ");
                             GameManager.setPause(true);
@@ -62,7 +62,7 @@ public class RandomEvents : MonoBehaviour
 
                         //The rest of the events only effect Infection
                     case 2:
-                        if (instance.smallInfectedGathering())
+                        if (smallInfectedGathering())
                         {
                             Debug.Log("Small Infected Gathering Event ");
                             GameManager.setPause(true);
@@ -73,7 +73,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 3:
-                        if (instance.mediumInfectedGathering())
+                        if (mediumInfectedGathering())
                         {
                             Debug.Log("Medium Infected Gathering Event ");
                             GameManager.setPause(true);
@@ -84,7 +84,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 4:
-                        if (instance.largeInfectedGathering())
+                        if (largeInfectedGathering())
                         {
                             Debug.Log("Large Infected Gathering Event");
                             GameManager.setPause(true);
@@ -95,7 +95,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 5:
-                        if (instance.allPSA())
+                        if (allPSA())
                         {
                             Debug.Log("All PSA Event ");
                             GameManager.setPause(true);
@@ -106,7 +106,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 6:
-                        if (instance.infectedTravler())
+                        if (infectedTravler())
                         {
                             Debug.Log("Infected Travler Event");
                             GameManager.setPause(true);
@@ -117,7 +117,7 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 7:
-                        if (instance.infectedQuarantine())
+                        if (infectedQuarantine())
                         {
                             Debug.Log("Infected Quarentine Event ");
                             GameManager.setPause(true);
@@ -134,7 +134,7 @@ public class RandomEvents : MonoBehaviour
     }
 
     //This makes the list random so that the same events will not be chosen in order. This way at the start of each day the event list is went through randomly.
-    public static void Shuffle(List<int> list)
+    public void Shuffle(List<int> list)
     {
         int n = list.Count;
         while (n > 1)

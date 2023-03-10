@@ -19,6 +19,8 @@ public class MenusManager : MonoBehaviour
     public GameObject travelTree;
     public GameObject sickTree;
 
+    private static GameManager gm = GameManager.getInstance();
+    
     public void showPauseMenu() {
         pauseMenu.SetActive(true);
     }
@@ -28,8 +30,21 @@ public class MenusManager : MonoBehaviour
     }
 
     public void updateSlider(){
-        VaccineSlider.value+=.02f;
-        Progress.text = VaccineSlider.value * 100f + "%";
+        gm = GameManager.getInstance();
+        bool[] sTree =  gm.currData.unlockedPoliciesTreeSick;
+        //checks if you have more than the first vaccine policy to increase vaccine increment value
+        bool test = sTree[1];
+        if(test){
+            VaccineSlider.value+=.02f;
+        }
+        else{
+            VaccineSlider.value+=.01f;
+        }
+
+        if(VaccineSlider.value>1){
+            VaccineSlider.value = 1;
+        }
+        Progress.text = (int)(VaccineSlider.value * 100f) + "%";
     }
 
     public void showPolicyMenu() {

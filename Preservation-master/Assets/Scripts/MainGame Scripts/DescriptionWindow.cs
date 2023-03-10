@@ -109,7 +109,7 @@ public class DescriptionWindow : MonoBehaviour
         buyButton.gameObject.SetActive(true);
         buyButton.interactable = false;
         tutorialButton.gameObject.SetActive(false);
-        quitGame.gameObject.SetActive(false);
+        quitGame.gameObject.SetActive(true);
 
         //float textPaddingSize = 4f;
         //Vector2 backgroundSize = new Vector2(descriptionText.preferredWidth + textPaddingSize * 2f, descriptionText.preferredHeight + textPaddingSize * 2f);
