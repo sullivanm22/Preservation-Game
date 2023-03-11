@@ -69,7 +69,7 @@ public class Formulas
 
     public static (int, int) CalculateNewDeaths(int nInfected, Data data)   // Here, we don't modify currData at all. Say if 70 people get infected, 3 days later we calculate how many of them die and how many recover. 
     {                                                                       // Easy subtraction with return variables is done in game manager.
-        double deathRate = .005;                                            // The return variables : recover adds to healthy. Those who die add to deaths                
+        double deathRate = .008;                                            // The return variables : recover adds to healthy. Those who die add to deaths                
         int recovered = 0;                                                  // Side note, currData.infected is not prior to this method, only after. 
         int died = 0;
 
@@ -82,9 +82,9 @@ public class Formulas
 
         if(DeathQueue.Count > 3) // People initially start dying 3 days after D day. Needs a queue of three to run... Not good but i use an else if for when its been three days past dday.
         {
-            Debug.Log("Ran queue");
             beenSick = (int) DeathQueue.Dequeue();
-            recovered = beenSick - (Random.Range(5, (int)(beenSick * deathRate))); //with deathrate being a bit more volitile this will simulate it well working on getting a new equation 
+            Debug.Log("Ran queue beensick="+ beenSick);
+            recovered = beenSick - (Random.Range(10, (int)(beenSick * deathRate))); //with deathrate being a bit more volitile this will simulate it well working on getting a new equation 
             died = beenSick - recovered;
         }
 
@@ -99,7 +99,7 @@ public class Formulas
         {
             Debug.Log("14+ Queue Size woah");
             int oldRecovered = recovered;
-            recovered -= (Random.Range(0, (int)(recovered * deathRate)));
+            recovered -= (Random.Range(10, (int)(recovered * deathRate)));
             died += (oldRecovered - recovered);
         }
         else if(recovered * 2 < data.infected)  // 1.) Way too many are infected. 2.) More than half of the infected population was from 1 particular day.
@@ -128,8 +128,8 @@ public class Formulas
         (bool[] passedHospital, bool[] passedRestrictions, bool[] passedPSA, bool[] passedTravel, bool[] passedSick) = GameManager.getInstance().getPassedPolicies();
         (Policy[] Hospital, Policy[] Restrictions, Policy[] PSA, Policy[] Travel, Policy[] Sick) = PolicyManager.getPolicies();
 
-        double E = 5.1;//Default E value
-        double P = .9;//Default P Value
+        double E = 3.3;//Default E value (was 5.1)
+        double P = 2.2;//Default P Value (was .9)
 
         double eCum = 0;//Cumulative E
         double pCum = 0;//Cumulative P

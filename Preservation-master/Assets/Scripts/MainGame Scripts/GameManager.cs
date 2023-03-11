@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour
         //    currData.reset();
         //    }
 
-        currData.setNewValues(currData.money, defaultHappiness, currData.PP, currData.healthy, defaultInfected, defaultDeaths, defaultDay, defaultDDay);
+        currData.setNewValues(currData.money, defaultHappiness, currData.PP, currData.healthy, defaultInfected, defaultDeaths, defaultDay, DifficultyMenu.getDDayInfo());
         
         
         nextActionTime = 0;
@@ -283,7 +283,10 @@ public class GameManager : MonoBehaviour
     //Calculates all numbers needed for updating information for the next day.
     public void calculateNextDay() {
         calculateMoney();
-        calculatePopulation();
+        //this is used to stop people from getting infected before Dday
+        if(currData.day > currData.dDay){
+            calculatePopulation();
+        }
         calculatePolicyPoints();
         calculateHappiness();
         updateAllText();
@@ -389,12 +392,12 @@ public class GameManager : MonoBehaviour
             TM.spawnHealthyPopup("-" + currData.healthy);
             currData.healthy = 0;
         }
-        else if (nInfected > 0)
+        else if (nInfected > 0 && currData.day - currData.dDay > 1)
         {
             currData.healthy -= nInfected;
             TM.spawnHealthyPopup("-" + nInfected);
         }
-        else if (nInfected < 0)
+        else if (nInfected < 0 && currData.day - currData.dDay > 1)
         {
             currData.healthy -= nInfected; //double negative. - - is a +
             TM.spawnHealthyPopup("+" + nInfected);
@@ -455,8 +458,9 @@ public class GameManager : MonoBehaviour
     //Calculates the happiness of your population for the next day.
     private void calculateHappiness() {
         //if num infected is greater than 25% of pop -1 from happiness
-        if(currData.infected>0){
-            if(initialPop/currData.infected<=4){
+        double percentInfected = currData.infected/initialPop;
+        if(currData.happiness>0){
+            if(percentInfected>=.25){
                 currData.happiness -=1;
             }
         }        
