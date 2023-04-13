@@ -17,6 +17,18 @@ public class TextManager : MonoBehaviour
     public Text PolicymoneyText;
     public Text PolicypolicyPointsText;
 
+    //These values are for the black container on the top of the policy menu
+    public Text policyMoneyText;
+    public Text policyHappinessText;
+    public Text policyPolicyPointsText;
+    public Text policyHealthyText;
+    public Text policyInfectedCountText;
+    public Text policyDeathCountText;
+    public Text policyDayValueText;
+    public Slider policyVaccineSlider;
+    public Text policyVaccineProgressText;
+    public MenusManager MM;
+
     public void spawnMoneyPopup(string val) {
         NumberPopup.Create(pfNumberPopup, moneyText.transform.position, val, moneyText.color);
     }
@@ -81,5 +93,16 @@ public class TextManager : MonoBehaviour
     public void setDayValText(string text) {
         dayValText.text = text;
     }
-
+    public void setPolicyMenuText(){
+        MM = MenusManager.getInstance();
+        policyMoneyText.text = moneyText.text;
+        policyHappinessText.text = happinessText.text;
+        policyPolicyPointsText.text = policyPointsText.text;
+        policyHealthyText.text = healthyText.text;
+        policyInfectedCountText.text = infectedCountText.text;
+        policyDeathCountText.text = deathCountText.text;
+        policyDayValueText.text = dayValText.text;
+        policyVaccineSlider = MM.getSlider();
+        policyVaccineProgressText.text = MM.getProgressText();
+    }
 }

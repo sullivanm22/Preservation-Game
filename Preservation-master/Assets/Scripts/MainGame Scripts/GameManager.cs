@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
     public void showPolicies() {
         paused = true;
         MM.showPolicyMenu();
+        TM.setPolicyMenuText();
     }
 
     public (bool[], bool[], bool[], bool[], bool[]) getPassedPolicies()
@@ -169,7 +170,7 @@ public class GameManager : MonoBehaviour
         TM.setPPText(currData.PP.ToString());
         TM.setPolicyMoneyText(Formatter.moneyString(currData.money));
         TM.setPolicyPPText(currData.PP.ToString());
-        
+        TM.setPolicyMenuText();
         
     }
 
@@ -284,7 +285,7 @@ public class GameManager : MonoBehaviour
     public void calculateNextDay() {
         calculateMoney();
         //this is used to stop people from getting infected before Dday
-        if(currData.day > currData.dDay){
+        if(currData.day >= currData.dDay){
             calculatePopulation();
         }
         calculatePolicyPoints();
@@ -354,11 +355,11 @@ public class GameManager : MonoBehaviour
             Formulas.refreshDeathQueue();
             return;
         }
-        if (currData.day == currData.dDay) {
-            currData.healthy -= 1;
-            TM.spawnHealthyPopup("-1");
-            currData.infected = 1;
-        }
+        // if (currData.day == currData.dDay) {
+        //     currData.healthy -= 1;
+        //     TM.spawnHealthyPopup("-1");
+        //     currData.infected = 1;
+        // }
 
         int nInfected = Formulas.CalculateNewInfected(currData);
         Debug.Log("New number of infected" + nInfected);
@@ -392,12 +393,12 @@ public class GameManager : MonoBehaviour
             TM.spawnHealthyPopup("-" + currData.healthy);
             currData.healthy = 0;
         }
-        else if (nInfected > 0 && currData.day - currData.dDay > 1)
+        else if (nInfected > 0 && currData.day - currData.dDay >= 0)
         {
             currData.healthy -= nInfected;
             TM.spawnHealthyPopup("-" + nInfected);
         }
-        else if (nInfected < 0 && currData.day - currData.dDay > 1)
+        else if (nInfected < 0 && currData.day - currData.dDay >= 0)
         {
             currData.healthy -= nInfected; //double negative. - - is a +
             TM.spawnHealthyPopup("+" + nInfected);

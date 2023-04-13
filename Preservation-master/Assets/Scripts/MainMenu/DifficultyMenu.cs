@@ -75,7 +75,7 @@ public class DifficultyMenu : MonoBehaviour
         //healthy = 300,000
         healthy.value = 5;
         //dDay = 10
-        dDay.value = 3;
+        dDay.value = 2;
         //First policies on all beneficial trees unlocked.
     }
     public void normalDifficulty() {
@@ -89,7 +89,7 @@ public class DifficultyMenu : MonoBehaviour
         //healthy = 60,000
         healthy.value = 1;
         //dDay = 7
-        dDay.value = 2;
+        dDay.value = 1;
     }
     public void hardDifficulty() {
         //Set drop downs to the propper values for hard mode
@@ -101,7 +101,7 @@ public class DifficultyMenu : MonoBehaviour
         policyPoints.value = 0;
         //healthy = 30,000
         healthy.value = 0;
-        //dDay = 5
+        //dDay = 7
         dDay.value = 1;
     }
 
@@ -282,17 +282,13 @@ public class DifficultyMenu : MonoBehaviour
         int dDayVal = 0;
         switch (dDayIndex)
         {
-            //case 0 is breaks the game
-            //case 0:
-            //    dDayVal = 1;
-            //    break;
+            // case 0:
+            //     dDayVal = 5;
+            //     break;
             case 1:
-                dDayVal = 5;
-                break;
-            case 2:
                 dDayVal = 7;
                 break;
-            case 3:
+            case 2:
                 dDayVal = 10;
                 break;
         }

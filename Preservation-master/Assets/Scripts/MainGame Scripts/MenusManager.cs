@@ -18,9 +18,15 @@ public class MenusManager : MonoBehaviour
     public GameObject PSATree;
     public GameObject travelTree;
     public GameObject sickTree;
-
+    public static MenusManager instance;
     private static GameManager gm = GameManager.getInstance();
     
+    public static MenusManager getInstance() {
+        return instance;
+    }
+    private void Awake(){
+        instance = this;
+    }
     public void showPauseMenu() {
         pauseMenu.SetActive(true);
     }
@@ -33,11 +39,11 @@ public class MenusManager : MonoBehaviour
         gm = GameManager.getInstance();
         bool[] sTree =  gm.currData.unlockedPoliciesTreeSick;
         //checks if you have more than the first vaccine policy to increase vaccine increment value
-        bool test = sTree[1];
-        if(test){
+        bool test = sTree[0];
+        if(sTree[1]){
             VaccineSlider.value+=.02f;
         }
-        else{
+        else if (test){
             VaccineSlider.value+=.01f;
         }
 
@@ -46,7 +52,12 @@ public class MenusManager : MonoBehaviour
         }
         Progress.text = (int)(VaccineSlider.value * 100f) + "%";
     }
-
+    public Slider getSlider(){
+        return VaccineSlider;
+    }
+    public String getProgressText(){
+        return Progress.text;
+    }
     public void showPolicyMenu() {
         policyMenu.SetActive(true);
         mainGame.SetActive(false);
