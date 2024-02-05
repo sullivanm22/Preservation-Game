@@ -55,8 +55,10 @@ To run the game locally, follow these steps:
 
 ## Results
 
+### Policy Menu/ UI Rework
 ![policy](https://github.com/sullivanm22/Preservation-Game/assets/59747399/f2e612a9-5308-4394-81aa-b47b1ad1d194)
 
+### Custom Start Scene Update 
 ![customstart](https://github.com/sullivanm22/Preservation-Game/assets/59747399/b8a991a0-bdf6-4575-bf8a-56ebf28f8ed4)
 
 ### Key takeaways:
